@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>IA no Teleserviço</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .chatbox {
+      width: 320px;
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .messages {
+      height: 300px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    .bot {
+      background: #22c55e;
+      padding: 6px;
+      border-radius: 6px;
+      margin: 5px 0;
+      color: black;
+    }
+    .user {
+      text-align: right;
+      margin: 5px 0;
+    }
+    button {
+      margin: 3px;
+      padding: 6px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="chatbox">
+    <div class="messages" id="chat">
+      <div class="bot">
+        Olá! 🤖 Sou uma IA especialista em teleserviço.<br>
+        Escolha uma opção:
+      </div>
+    </div>
+
+    <div>
+      <button onclick="responder('ia')">O que é IA</button>
+      <button onclick="responder('teleservico')">Teleserviço</button>
+      <button onclick="responder('vantagens')">Vantagens</button>
+      <button onclick="responder('impacto')">Impacto</button>
+      <button onclick="responder('quiz')">Quiz</button>
+    </div>
+  </div>
+
+<script>
+function responder(opcao) {
+  let chat = document.getElementById("chat");
+
+  if(opcao === "ia"){
+    chat.innerHTML += "<div class='user'>O que é IA?</div>";
+    chat.innerHTML += "<div class='bot'>A Inteligência Artificial permite que sistemas aprendam, tomem decisões e simulem o pensamento humano.</div>";
+  }
+
+  if(opcao === "teleservico"){
+    chat.innerHTML += "<div class='user'>O que é teleserviço?</div>";
+    chat.innerHTML += "<div class='bot'>Teleserviço é o atendimento ao cliente feito por telefone ou canais digitais.</div>";
+  }
+
+  if(opcao === "vantagens"){
+    chat.innerHTML += "<div class='user'>Quais as vantagens?</div>";
+    chat.innerHTML += "<div class='bot'>✔ Atendimento 24h<br>✔ Respostas rápidas<br>✔ Redução de custos<br>✔ Melhor experiência do cliente</div>";
+  }
+
+  if(opcao === "impacto"){
+    chat.innerHTML += "<div class='user'>Impacto da IA</div>";
+    chat.innerHTML += "<div class='bot'>A IA torna o atendimento mais rápido, eficiente e inteligente.</div>";
+  }
+
+  if(opcao === "quiz"){
+    chat.innerHTML += "<div class='user'>Quiz</div>";
+    chat.innerHTML += "<div class='bot'>😏 O que significa IA?<br><br>A) Inteligência Artificial<br>B) Internet Automática<br>C) Informação Analógica<br>D) Inteligência Avançada</div>";
+  }
+
+  chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
